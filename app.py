@@ -25,6 +25,18 @@ def load_keras_model():
 
     return model
 
+fashion_dictionary = {
+    0: "T-Shirt/Top",
+    1: "Trouser",
+    2: "Pullover",
+    3: "Dress",
+    4: "Coat",
+    5: "Sandal",
+    6: "Shirt",
+    7: "Sneaker",
+    8: "Bag",
+    9: "Ankle Boot",
+}
 
 # Homepage: The form
 @app.route('/')
@@ -69,7 +81,10 @@ def process_form():
     for num, p in enumerate(prediction_probabilities_list, start=0):
         prediction_probabilities[num] = p
 
-    return render_template('results.html', prediction=prediction_classes[0], probabilities=prediction_probabilities, image=image_display)
+    prediction = prediction_classes[0]
+    prediction_name = fashion_dictionary[prediction]
+
+    return render_template('results.html', prediction=prediction, prediction_name=prediction_name, probabilities=prediction_probabilities, image=image_display)
 
 
 def valid_image_request():
