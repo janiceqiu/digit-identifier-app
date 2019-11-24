@@ -21,7 +21,7 @@ def load_keras_model():
     global model
 
     # TODO: Update to your model's filename
-    model = load_model('./mnistmodel.h5')
+    model = load_model('./fashion_mnistmodel.h5')
 
     return model
 
