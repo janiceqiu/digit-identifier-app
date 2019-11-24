@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 
-{% block title %}Handwritten Digit Identifier{% endblock %}
+{% block title %}Fashion Item Identifier{% endblock %}
 
 {% block preendbody %}
 <script type="text/javascript">
-  var form = document.getElementById("digit-form");
+  var form = document.getElementById("fashion-form");
   var submitButton = document.getElementById("btn-submit")
   var file = document.getElementById("file");
   file.onchange = function () {
@@ -25,8 +25,8 @@
   <div class="columns">
     <div class="column is-half is-offset-one-quarter">
       <div class="notification">
-        Welcome to our digit identifier! Upload an image of a handwritten digit, and we will attempt
-        to predict what number it represents.
+        Welcome to our fashion item identifier! Upload an image of fashion item, and we will attempt
+        to predict what the item is.
       </div>
 
       <div class="field">
